@@ -1,0 +1,99 @@
+.slider-section {
+    height: 785px;
+    position: relative;
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.swiper-bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+        opacity: 0 !important;
+        background-position: center;
+        background-size: cover;
+        transition: .3s;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    .swiper-slide-active {
+        opacity: 1 !important;
+    }
+}
+
+.swiper-info__wrapp {
+    padding: 100px 0;
+    position: relative;
+    width: 462px;
+    height: 670px;
+    background-color: $COLOR__WHITE;
+    @include flex(column, flex-start, center);
+    .swiper-info {
+        overflow: hidden;
+        width: 313px;
+        .swiper-slide {
+            text-align: center;
+            .slide-title {
+                @include font(64px, 700, 64px, $COLOR__DARKBLUE);
+            }
+            .h3 {
+                margin: 50px 0 10px;
+                color: $COLOR__DARKBLUE;
+            }
+            .slide-text {
+                margin-bottom: 30px;
+                @include font(36px, 400, 45px, $COLOR__DARKBLUE);
+            }
+        }
+    }
+    .swiper-pagination-fraction {
+        margin: 50px 0 10px;
+        text-align: center;
+        text-transform: uppercase;
+        @include font(24px, 700, 30px, $COLOR__DARKBLUE);
+        .swiper-pagination-current {
+            @include font(36px, 700, 45px, $COLOR__DARKBLUE);
+        }
+    }
+    .swiper-navigation {
+        height: 30px;
+        @include flex(row, center, center);
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: static;
+            width: 30px;
+            height: 30px;
+            border: 1px solid $COLOR__DARKBLUE;
+            border-radius: 50%;
+            background-color: $COLOR__DARKBLUE;
+            @include flex(row, center, center);
+            &::after {
+                display: none;
+            }
+            svg {
+                path {
+                    fill: $COLOR__WHITE;
+                }
+            }
+        }
+        .swiper-button-prev {
+            margin-right: 8px;
+        }
+        .swiper-button-next {}
+        .swiper-button-disabled {
+            opacity: 1;
+            background-color: transparent;
+            svg {
+                path {
+                    fill: $COLOR__DARKBLUE;
+                }
+            }
+        }
+    }
+}

@@ -113,16 +113,91 @@ h6 {
 
 .container {
     width: 100%;
-    max-width: 1820;
+    max-width: 1820px;
     margin: 0 auto;
 }
 
 .btn {
+    display: inline-block;
     padding: 14px 46px;
     background-color: $COLOR__GREEN;
+    border-radius: 3px;
     text-transform: uppercase;
     @include font(18px,
     700,
     125%,
     $COLOR__WHITE);
+}
+
+.h2 {
+    position: relative;
+    @include font(48px,
+    700,
+    60px,
+    $COLOR__DARKBLUE);
+    &::before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: -1;
+        width: 20px;
+        height: 80%;
+        background-color: $COLOR__GREEN;
+    }
+}
+
+.h3 {
+    @include font(36px,
+    700,
+    45px,
+    $COLOR__WHITE)
+}
+
+.h4 {
+    text-transform: uppercase;
+    @include font(24px,
+    700,
+    30px,
+    $COLOR__DARKBLUE);
+}
+
+.text-s {
+    @include font(18px,
+    400,
+    22.5px,
+    $COLOR__WHITE);
+}
+
+.text-n {
+    text-transform: uppercase;
+    @include font(18px,
+    700,
+    22.5px,
+    $COLOR__DARKBLUE);
+}
+
+.before-line {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 100%;
+        background-color: $COLOR__GREEN;
+    }
+}
+
+.before-line {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 100%;
+        background-color: $COLOR__GREEN;
+    }
 }

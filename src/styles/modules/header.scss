@@ -1,0 +1,96 @@
+.header {}
+
+.header-top {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(30, 46, 54, 0.6);
+    .container {
+        @include flex(row, space-between, center)
+    }
+}
+
+.header-contacts {
+    @include flex(row, space-between, center);
+    .social-links__wrap {
+        margin-right: 55px;
+        @include flex(row, space-between, center);
+        span {
+            @include font(18px, 700, 22.5px, $COLOR__DARKBLUE);
+        }
+        .social-links-list {
+            margin-left: 10px;
+            @include flex(row, space-between, center);
+        }
+    }
+    .phone-number__wrap {
+        @include flex(row, space-between, center);
+        .phone {
+            margin: 0 5px;
+            @include font(18px, 700px, 22.5px, $COLOR__DARKBLUE);
+        }
+    }
+}
+
+.nav {
+    .nav-list {
+        @include flex(row, space-between, center);
+        .nav-item {
+            position: relative;
+            margin-right: 15px;
+            &:last-child {
+                margin-right: 0px;
+            }
+            .nav-active {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: $COLOR__GREEN;
+                }
+            }
+        }
+    }
+}
+
+.header-bottom {
+    position: relative;
+    padding: 27px 0;
+    .container {
+        @include flex(row, space-between, center);
+    }
+}
+
+.menu-list {
+    @include flex(row, space-between, center);
+    .menu-item {
+        margin-right: 20px;
+        @include flex(row, null, center);
+        &:last-child {
+            margin-right: 0;
+        }
+        span {
+            margin-right: 7px;
+        }
+    }
+}
+
+.wrap-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cart-section {
+    @include flex(row, null, center);
+    #cart {
+        margin-right: 30px;
+        background-color: transparent;
+        @include flex(row, null, center);
+        span {
+            margin-left: 5px;
+        }
+    }
+}
